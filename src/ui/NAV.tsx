@@ -6,14 +6,47 @@
     Description:
 */
 
-import { FC, ReactNode } from "react";
+import { FC, ReactNode, useEffect, useRef } from "react";
+import toggleMenu from "@/utils/toggleMenu";
 
 interface NavProps {
   children: ReactNode;
 }
 
-const NAV: FC<NavProps> = ({ children }) => {
+export const NAV: FC<NavProps> = ({ children }) => {
   return <nav className="nav-ui-elements">{children}</nav>;
 };
 
-export default NAV;
+export const MOBILENAV: FC<NavProps> = ({ children }) => {
+  const mobileMenu = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const clickedNode = event.target as HTMLElement;
+      const dataRefValue = clickedNode.getAttribute("data-ref");
+
+      if (dataRefValue === "mMenu") {
+        return;
+      }
+
+      if (
+        mobileMenu.current &&
+        !mobileMenu.current.contains(event.target as Node)
+      ) {
+        toggleMenu();
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+  return (
+    <div className="mobile-nav-ui-elements" ref={mobileMenu}>
+      <nav className="nav-elements">{children}</nav>
+    </div>
+  );
+};

@@ -6,16 +6,31 @@
     Description:
 */
 
+import { useSelector } from "react-redux";
 import LINK from "@/ui/LINK";
 import Navigation from "./Navigation";
+import MobileNavigation from "./MobileNavigation";
 import DarkLightMode from "./DarkLightMode";
+import HamburgerButton from "./HamburgerButton";
+
+import toggleMenu from "@/utils/toggleMenu";
 
 const Header = () => {
+  const { mobileNavigation } = useSelector((state: any) => state.mode);
+
   return (
     <header className="header-component">
       <LINK href="/" text="DEV" classes="logo-link" />
       <Navigation />
-      <DarkLightMode />
+      <div className="ui-flex">
+        <HamburgerButton
+          toggle={mobileNavigation}
+          onClick={toggleMenu}
+          Dref="mMenu"
+        />
+        <DarkLightMode />
+        {mobileNavigation ? <MobileNavigation /> : null}
+      </div>
     </header>
   );
 };

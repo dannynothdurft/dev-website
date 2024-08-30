@@ -30,7 +30,19 @@ $color-primary-dark-3: rgba(0, 12, 35, 1);
 //Todo: Darkmode einrichten zum schluss Zeile 42 ist ein test
 // standart Elements
 body.darkmode {
-background-color: black;
+    background-color: $color-background;
+}
+// ui-classes
+
+.ui-flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+
+    @media #{$mobileMax} {
+        gap: 10px;
+    }
 }
 
 // ui-Elements
@@ -40,7 +52,7 @@ background-color: black;
     cursor: pointer;
 
     body.darkmode & {
-        color: #fff;
+        color: $color-bright;
     }
 
     &.text-link {
@@ -61,29 +73,89 @@ background-color: black;
 }
 
 .nav-ui-elements {
-    display: flex;
+    display: none;
     align-items: center;
     gap: 30px;
+
+    @media #{$tablet} {
+        display: flex;
+      }
     
     .a-ui-element {
         font-family: "Rubik";
         font-weight: 500;
-        font-size: clamp(1em, 2vw + 0.2em, 1.2em);
+        font-size: clamp(0.9em, 2vw + 0.2em, 1.1em);
         border-bottom: 2px solid transparent;
         transition: border-bottom 0.3s ease;
         padding: 0 5px;
+        color: $color-secondary;
     
         &:hover {
             border-bottom: 2px solid $color-secondary;
+
+            body.darkmode & {
+                border-color: $color-bright;
+            }
         }
 
         &.active {
             border-bottom: 2px solid $color-secondary;
+
+            body.darkmode & {
+                border-color: $color-bright;
+            }
         }
     }
 }
 
-// Buttons
+.mobile-nav-ui-elements {
+    position: absolute;
+    top: 40px;
+    right: 4px;
+    left: 4px;
+    padding: 16px;
+    border-radius: 16px;
+    background-color: $color-bright;
+    @include box-shadow;
+
+    @media #{$mobileMax} {
+        top: 60px;
+        right: 4px;
+        left: unset;
+        width: 200px;
+        text-align: center;
+    }
+
+    @media #{$tablet} {
+        display: none;
+    }
+
+    .nav-elements {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .a-ui-element {
+            font-family: "Rubik";
+            font-weight: 500;
+            font-size: clamp(0.9em, 2vw + 0.2em, 1.1em);
+            border-bottom: 2px solid transparent;
+            transition: border-bottom 0.3s ease;
+            padding: 0 5px;
+            color: $color-secondary;
+        
+            &:hover {
+                border-bottom: 2px solid $color-secondary;
+            }
+    
+            &.active {
+                border-bottom: 2px solid $color-secondary;
+            }
+        }
+    }
+}
+
+// Button to ui wechseln
 .btn {
     background-color: unset;
     border: unset;
@@ -145,7 +217,7 @@ span {
 }
 
 .icon-button {
-    padding: 6px;
+    padding: 0px;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -156,5 +228,63 @@ span {
 .header-component {
     display: flex;
     justify-content: space-between;
-    padding: 16px;
+    align-items: center;
+    padding: 10px;
+    position: relative;
+
+    @media #{$mobileMax} {
+       padding: 20px 16px;
+    }
+
+    @media #{$tablet} {
+        padding: 32px 20px;
+     }
+
+     @media #{$desktop} {
+        padding: 40px 32px;
+     }
+}
+
+.hamburger-menu-btn {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    cursor: pointer;
+  
+    .hamburger-menu-line {
+      height: 3px;
+      width: 25px;
+      background-color: $color-secondary;
+      border-radius: 8px;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      display: block;
+
+      body.darkmode & {
+        background-color: $color-bright;
+    }
+
+      @include box-shadow;
+  
+      &.topline {
+        &.active {
+          transform: translateY(6px) rotate(45deg);
+        }
+      }
+  
+      &.middleline {
+        &.active {
+          opacity: 0;
+        }
+      }
+  
+      &.bottomline {
+        &.active {
+          transform: translateY(-6px) rotate(-45deg);
+        }
+      }
+    }
+  
+    @media #{$tablet} {
+      display: none;
+    }
 }

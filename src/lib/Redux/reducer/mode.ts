@@ -12,14 +12,18 @@ export const mode = createSlice({
   name: "mode",
   initialState: {
     mode: false,
+    mobileNavigation: false,
   },
   reducers: {
     switchMode(state) {
       state.mode = !state.mode;
     },
+    switchMobileNavigation(state) {
+      state.mobileNavigation = !state.mobileNavigation;
+    },
   },
 });
 
-export const { switchMode } = mode.actions;
+export const { switchMode, switchMobileNavigation } = mode.actions;
 
 export default mode.reducer;

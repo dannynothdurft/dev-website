@@ -28,6 +28,7 @@ interface AProps {
   ping?: string;
   style?: object;
   text: string;
+  onClick?: () => void;
 }
 
 const LINK: FC<AProps> = ({
@@ -49,6 +50,7 @@ const LINK: FC<AProps> = ({
   style,
   ping,
   text,
+  onClick,
 }) => {
   return (
     <Link
@@ -69,6 +71,7 @@ const LINK: FC<AProps> = ({
       {...(referrerpolicy && { referrerpolicy })}
       {...(style && { style })}
       {...(ping && { ping })}
+      {...(onClick && { onClick })}
     >
       {text}
     </Link>

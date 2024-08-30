@@ -1,6 +1,6 @@
 "use client";
 /* 
-    File: /components/header/Navigation.tsx
+    File: /components/header/MobileNavigation.tsx
     Version: 1.0.0
     Developer: Danny Nothdurft  
     Description:
@@ -9,14 +9,16 @@
 import NavCon from "@/lang/de/navigation.json";
 import { usePathname } from "next/navigation";
 
-import { NAV } from "@/ui/NAV";
+import { MOBILENAV } from "@/ui/NAV";
 import LINK from "@/ui/LINK";
 
-const Navigation = () => {
+import toggleMenu from "@/utils/toggleMenu";
+
+const MobileNavigation = () => {
   const pathname = usePathname();
 
   return (
-    <NAV>
+    <MOBILENAV>
       {NavCon.header.map((link: any) => {
         return (
           <LINK
@@ -25,11 +27,12 @@ const Navigation = () => {
             href={link.href}
             text={link.text}
             title={link.title}
+            onClick={toggleMenu}
           />
         );
       })}
-    </NAV>
+    </MOBILENAV>
   );
 };
 
-export default Navigation;
+export default MobileNavigation;
