@@ -1,0 +1,160 @@
+/* 
+    File: styles/globals.scss
+    Version: 1.0.0
+    Developer: Danny Nothdurft  
+    Description:
+*/
+
+//imports
+@import "./fonts.scss";
+@import "./variables.scss";
+
+* { box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+//! Colors werden noch gelöscht
+$color-bright: rgba(250, 251, 244, 1);
+
+$color-primary-light-3: rgba(153, 155, 217, 1);
+$color-primary-light-2: rgba(102, 115, 179, 1);
+$color-primary-light-1: rgba(51, 76, 140, 1);
+$color-primary: rgba(0, 35, 102, 1);
+$color-primary-dark-1: rgba(0, 25, 73, 1);
+$color-primary-dark-2: rgba(0, 18, 51, 1);
+$color-primary-dark-3: rgba(0, 12, 35, 1);
+//! Bis hier
+
+//Todo: Darkmode einrichten zum schluss Zeile 42 ist ein test
+// standart Elements
+body.darkmode {
+background-color: black;
+}
+
+// ui-Elements
+.a-ui-element {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+
+    body.darkmode & {
+        color: #fff;
+    }
+
+    &.text-link {
+        color: $color-secondary;
+        border-bottom: 1px solid $color-secondary;
+        padding: 0 6px;
+    }
+
+    &.logo-link {
+        color: $color-secondary;
+        font-size: clamp(1.5em, 2vw + 0.5em, 2em);
+        font-family: "Rubik";
+        font-weight: 800;
+        font-style: italic;
+        line-height: 1em;
+        letter-spacing: -0.05em;
+    }
+}
+
+.nav-ui-elements {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    
+    .a-ui-element {
+        font-family: "Rubik";
+        font-weight: 500;
+        font-size: clamp(1em, 2vw + 0.2em, 1.2em);
+        border-bottom: 2px solid transparent;
+        transition: border-bottom 0.3s ease;
+        padding: 0 5px;
+    
+        &:hover {
+            border-bottom: 2px solid $color-secondary;
+        }
+
+        &.active {
+            border-bottom: 2px solid $color-secondary;
+        }
+    }
+}
+
+// Buttons
+.btn {
+    background-color: unset;
+    border: unset;
+    font-size: 1em;
+    padding: 8px 32px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+  
+.link-button {
+color: $color-primary;
+}
+
+.ui-label-button {
+border: 2px solid $color-primary;
+background-color: $color-primary;
+color: $color-bright;
+min-width: 120px;
+
+&:hover {
+    background-color: $color-primary-dark-1;
+    @include box-shadow;
+}
+
+&:active {
+    background-color: $color-primary-dark-2;
+    @include box-shadow-inset;
+}
+
+&.secondary {
+    background-color: unset;
+    color: $color-primary;
+
+    &:hover {
+    background-color: $color-primary-light-3;
+    @include box-shadow;
+    }
+
+    &:active {
+    background-color: $color-primary-light-1;
+    @include box-shadow-inset;
+    }
+}
+}
+
+.icon-label-button {
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 10px;
+
+svg {
+    fill: $color-bright;
+}
+
+span {
+    color: $color-bright;
+}
+}
+
+.icon-button {
+    padding: 6px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+// components
+.header-component {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+}

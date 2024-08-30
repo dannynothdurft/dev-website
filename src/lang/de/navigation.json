@@ -1,0 +1,9 @@
+{
+    "header": [
+    {"id": "hn1", "title": "Gehe zur Startseite zurück", "href": "/", "text": "Startseite"},
+    {"id": "hn2", "title": "Gehe zur Über mich Seite", "href": "/ueber-mich", "text": "Über Mich"},
+    {"id": "hn3", "title": "Gehe zur Projekt Seite", "href": "/projekte", "text": "Projekte"},
+    {"id": "hn4", "title": "Gehe zur Kontakt Seite", "href": "/kontakt", "text": "Kontakt"}
+    ],
+    "footer": {} 
+}
