@@ -1,8 +1,8 @@
 {
     "header": [
     {"id": "hn1", "title": "go to back Home", "href": "/", "text": "Home"},
-    {"id": "hn2", "title": "go to about me page", "href": "/about", "text": "About Me"},
-    {"id": "hn3", "title": "go to projects page", "href": "/projects", "text": "Projects"},
+    {"id": "hn2", "title": "go to projects page", "href": "/projects", "text": "Projects"},
+    {"id": "hn3", "title": "go to about me page", "href": "/about", "text": "About Me"},
     {"id": "hn4", "title": "go to contact page", "href": "/contact", "text": "Contact"}
     ],
     "footer": {} 

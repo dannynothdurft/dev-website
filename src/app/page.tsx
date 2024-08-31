@@ -15,6 +15,13 @@ export default function Home() {
         </div>
       </section>
       <hr />
+      <section className="container flex col center my-1">
+        <h2>Projekte</h2>
+      </section>
+      <hr />
+      <section className="container flex col center my-1">
+        <h2>Kunden</h2>
+      </section>
     </main>
   );
 }
