@@ -37,11 +37,36 @@ body {
     }
 }
 
+hr {
+    border-color: $color-gray-light;
+    max-width: 1280px;
+    margin: 0 10px;
+
+    @media #{$max} {
+        margin: 0 auto;
+      }
+}
+
+h2 {
+    font-size: clamp(1.2em, 2vw + 0.4em, 1.8em);
+    font-weight: 300;
+    text-align: center;
+    color: $color-gray;
+}
+
 // classes
 .container {
     max-width: 1300px;
     margin: 0 auto;
     padding: 10px;
+
+    @media #{$tablet} {
+        padding: 10px 20px;
+     }
+
+     @media #{$desktop} {
+        padding: 10px 30px;
+     }
 }
 
 .flex {
@@ -93,23 +118,6 @@ body {
 
 .mb-2 {
     margin-bottom: 20px;
-}
-
-.h2 {
-    font-size: clamp(1.2em, 2vw + 0.4em, 1.8em);
-    font-weight: 300;
-    text-align: center;
-    color: $color-gray;
-}
-
-.hr {
-    border-color: $color-gray-light;
-    max-width: 1280px;
-    margin: 0 10px;
-
-    @media #{$max} {
-        margin: 0 auto;
-      }
 }
 
 // ui-Elements
