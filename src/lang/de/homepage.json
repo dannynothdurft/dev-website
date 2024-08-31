@@ -1,0 +1,25 @@
+{
+    "hero": {
+        "profileImage": {
+            "src": "/dev-danny.webp",
+            "title": "Dev Danny",
+            "alt": "Dev Danny"
+        },
+        "headingTitle": "Hallo zusammen, ich bin Danny Nothdurft.",
+        "headingContent": "Hallo, ich bin Danny - Grafikdesigner. Ich bin ein kreativer und neugieriger Mensch, der viel Erfahrung hat und gerne mit Design, Websites und Marketing arbeitet.",
+        "setupImage":  {
+            "src": "/header-setup.webp",
+            "title": "Setup von Dev Danny",
+            "alt": "Setup von Dev Danny"
+        }
+    },
+    "company": {
+        "content": "Ich habe mit einigen großartigen Unternehmen zusammengearbeitet.",
+        "companys": [
+            {
+                "src": "SugarShape",
+                "href": "https://www.sugarshape.de",
+                "title": "SugarShape GmbH"
+    }]
+    }
+}

@@ -22,7 +22,7 @@ const Header = () => {
     <header className="header-component">
       <LINK href="/" text="DEV" classes="logo-link" />
       <Navigation />
-      <div className="ui-flex">
+      <div className="flex-center">
         <HamburgerButton
           toggle={mobileNavigation}
           onClick={toggleMenu}

@@ -8,6 +8,8 @@
 // Colors
 $color-secondary: rgba(8, 2, 39, 1);
 $color-bright: rgba(250, 251, 244, 1);
+$color-gray: rgba(104,115,133, 1);
+$color-gray-light: rgba(205,205,205, 1);
 
 // Dark Mode
 $color-background: rgba(43,42,51, 1);
@@ -24,6 +26,18 @@ $color-background: rgba(43,42,51, 1);
     box-shadow: 0px 0px 3px 1px rgba(255, 255, 255, 0.15);
     }
 }
+
+@mixin box-shadow-xl {
+    -webkit-box-shadow: -18px 26px 34px 0px rgba(0,0,0,0.4);
+    -moz-box-shadow: -18px 26px 34px 0px rgba(0,0,0,0.4);
+    box-shadow: -18px 26px 34px 0px rgba(0,0,0,0.4);
+
+    body.darkmode & {
+        -webkit-box-shadow: -18px 26px 34px 0px rgba(255,255,255,0.4);
+        -moz-box-shadow: -18px 26px 34px 0px rgba(255,255,255,0.4);
+        box-shadow: -18px 26px 34px 0px rgba(255,255,255,0.4);
+    }
+}
   
 @mixin box-shadow-inset {
     -webkit-box-shadow: inset 0px 0px 3px 0px rgba(0, 0, 0, 0.15);
@@ -37,4 +51,4 @@ $mobile: "only screen and (max-width: 575px)";
 $mobileMax: "only screen and (min-width: 576px)";
 $tablet: "only screen and (min-width: 768px)";
 $desktop: "only screen and (min-width: 992px)";
-$max: "only screen and (min-width: 1200px)";
+$max: "only screen and (min-width: 1300px)";
