@@ -1,5 +1,6 @@
 "use client";
 import Header from "@/components/header";
+import Footer from "@/components/footer";
 import { useSelector } from "react-redux";
 
 const MainLayout = ({
@@ -14,13 +15,15 @@ const MainLayout = ({
       <body className="darkmode">
         <Header />
         {children}
+        <Footer />
       </body>
     );
   } else {
     return (
       <body>
         <Header />
-        {children}
+        <main>{children}</main>
+        <Footer />
       </body>
     );
   }

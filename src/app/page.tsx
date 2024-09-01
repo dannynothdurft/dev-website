@@ -4,7 +4,7 @@ import ICONLINK from "@/ui/ICONLINK";
 
 export default function Home() {
   return (
-    <main>
+    <>
       <Hero />
       <section className="container flex col center my-1">
         <h2>{HomeLang.company.content}</h2>
@@ -22,6 +22,6 @@ export default function Home() {
       <section className="container flex col center my-1">
         <h2>Kunden</h2>
       </section>
-    </main>
+    </>
   );
 }

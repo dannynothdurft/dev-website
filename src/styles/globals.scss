@@ -36,6 +36,18 @@ body {
     }
 }
 
+p {
+    font-size: 1.05em;
+    line-height: 1.6em;
+    font-weight: 400;
+    color: $color-gray;
+    margin-bottom: 1em;
+
+    body.darkmode & {
+        color: $color-gray-light;
+    }
+}
+
 hr {
     border-color: $color-gray-light;
     max-width: 1280px;
@@ -44,6 +56,17 @@ hr {
     @media #{$max} {
         margin: 0 auto;
       }
+}
+
+h1 {
+    font-size: clamp(1.5em, 3vw + 0.5em, 3.1em);
+    line-height: 1.3em;
+    font-weight: 800;
+    color: $color-secondary;
+
+    body.darkmode & {
+        color: $color-bright;
+    }
 }
 
 h2 {
@@ -55,6 +78,12 @@ h2 {
     body.darkmode & {
         color: $color-gray-light;
     }
+}
+
+img {
+    border-radius: 16px;
+    object-fit: cover;
+    @include box-shadow;
 }
 
 // classes
@@ -121,6 +150,16 @@ h2 {
 
 .mb-2 {
     margin-bottom: 20px;
+}
+
+.page {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 10px;
+
+    @media #{$tablet} {
+        padding: 20px;
+    }
 }
 
 // ui-Elements
@@ -365,28 +404,6 @@ span {
 }
 
 .hero-component {
-    h1 {
-        font-size: clamp(1.5em, 3vw + 0.5em, 3.1em);
-        line-height: 1.3em;
-        font-weight: 800;
-        color: $color-secondary;
-
-        body.darkmode & {
-            color: $color-bright;
-        }
-    }
-
-    p {
-        font-size: 1.05em;
-        line-height: 1.6em;
-        font-weight: 400;
-        color: $color-gray;
-
-        body.darkmode & {
-            color: $color-gray-light;
-        }
-    }
-
     .profile-image {
         border-radius: 50%;
     }
@@ -399,4 +416,34 @@ span {
 
         @include box-shadow-xl;
     }
+}
+
+.footer-header {
+    background-image: url("/footer-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+
+    @media #{$tablet} {
+        padding: 20px;
+    }
+
+    h2 {
+        color: $color-bright;
+    }
+
+    p {
+        color: $color-bright;
+    }
+}
+
+.copirate {
+    text-align: center;
+    margin-top: .5em;
+    font-size: 0.8em;
 }
